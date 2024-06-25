@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fontAwm Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {}
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 45px;
+        }
+
+        .logo {
+            font-size: 40px;
+            align-self: start;
+        }
+
+        .xmark{
+            font-size: 25px;
+            display: none;
+            align-self: start;
+            position: absolute;
+            left: 62%;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        li {
+            list-style: none;
+            padding: 10px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        a:hover {
+            color: rgb(69, 141, 62);
+        }
+
+        .menu-bar {
+            font-size: 25px;
+            display: none;
+        }
+
+
+        @media (max-width: 768px) {
+            ul {
+                display: none;
+                flex-direction: column;
+                background: #93bcd0;
+                width: 300px;
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-bar {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="logo">
+                Navbar
+            </div>
+            <div class="xmark" id="xMark">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <ul id="ul">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="menu-bar" id="menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        const menuBar = document.getElementById('menu')
+        const links = document.getElementById('ul')
+        const xMark = document.getElementById('xMark')
+        const navbar = document.getElementById('navbar')
+
+        menuBar.addEventListener('click',()=>{
+            links.style.display = "block"
+            menuBar.style.display = "none"
+            xMark.style.display = "block"
+            navbar.style.paddingRight = "0px"
+            navbar.style.paddingTop = "0px"
+        })
+
+        xMark.addEventListener('click',()=>{
+            links.style.display = "none"
+            menuBar.style.display = "block"
+            xMark.style.display = "none"
+            navbar.style.paddingRight = "45px"
+            navbar.style.paddingTop = "10px"
+        })
+
+    </script>
+</body>
+
+</html>
